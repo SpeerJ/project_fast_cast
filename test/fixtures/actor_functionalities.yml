@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  rating: 1
+  about_me: MyText
+  date_of_birth: 2024-10-22
+  city: MyString
+  on_time_persone: 1
+  reschedule_remote_percent: 1
+  reschedule_in_oerson_percent: 1
+  actor: one
+
+two:
+  rating: 1
+  about_me: MyText
+  date_of_birth: 2024-10-22
+  city: MyString
+  on_time_persone: 1
+  reschedule_remote_percent: 1
+  reschedule_in_oerson_percent: 1
+  actor: two

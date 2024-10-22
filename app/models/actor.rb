@@ -1,0 +1,3 @@
+class Actor < AccountFunctionality
+
+end
