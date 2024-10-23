@@ -41,18 +41,21 @@
     <orderEntry type="library" scope="PROVIDED" name="activesupport (v8.0.0.rc1, asdf: 3.3.4) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="addressable (v2.8.7, asdf: 3.3.4) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="ast (v2.4.2, asdf: 3.3.4) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="base64 (v0.2.0, asdf: 3.3.4) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="bcrypt (v3.1.20, asdf: 3.3.4) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="bcrypt_pbkdf (v1.1.1, asdf: 3.3.4) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="benchmark (v0.3.0, asdf: 3.3.4) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="bigdecimal (v3.1.8, asdf: 3.3.4) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="bindex (v0.8.1, asdf: 3.3.4) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="bootsnap (v1.18.4, asdf: 3.3.4) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="brakeman (v6.2.2, asdf: 3.3.4) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="builder (v3.3.0, asdf: 3.3.4) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="bundler (v2.5.11, asdf: 3.3.4) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="bundler (v2.5.22, asdf: 3.3.4) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="capybara (v3.40.0, asdf: 3.3.4) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="concurrent-ruby (v1.3.4, asdf: 3.3.4) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="connection_pool (v2.4.1, asdf: 3.3.4) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="crass (v1.0.6, asdf: 3.3.4) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="date (v3.3.4, asdf: 3.3.4) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="debug (v1.9.2, asdf: 3.3.4) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="dotenv (v3.1.4, asdf: 3.3.4) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="drb (v2.2.1, asdf: 3.3.4) [gem]" level="application" />
@@ -79,12 +82,14 @@
     <orderEntry type="library" scope="PROVIDED" name="msgpack (v1.7.3, asdf: 3.3.4) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="net-imap (v0.5.0, asdf: 3.3.4) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="net-pop (v0.1.2, asdf: 3.3.4) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="net-protocol (v0.2.2, asdf: 3.3.4) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="net-scp (v4.0.0, asdf: 3.3.4) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="net-sftp (v4.0.0, asdf: 3.3.4) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="net-smtp (v0.5.0, asdf: 3.3.4) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="net-ssh (v7.3.0, asdf: 3.3.4) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="nio4r (v2.7.3, asdf: 3.3.4) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="nokogiri (v1.16.7, asdf: 3.3.4) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="ostruct (v0.6.0, asdf: 3.3.4) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="parallel (v1.26.3, asdf: 3.3.4) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="parser (v3.3.5.0, asdf: 3.3.4) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="propshaft (v1.1.0, asdf: 3.3.4) [gem]" level="application" />
@@ -115,6 +120,7 @@
     <orderEntry type="library" scope="PROVIDED" name="rubocop-rails-omakase (v1.0.0, asdf: 3.3.4) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="ruby-progressbar (v1.13.0, asdf: 3.3.4) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rubyzip (v2.3.2, asdf: 3.3.4) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="securerandom (v0.3.1, asdf: 3.3.4) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="selenium-webdriver (v4.25.0, asdf: 3.3.4) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="solid_cable (v3.0.2, asdf: 3.3.4) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="solid_cache (v1.0.6, asdf: 3.3.4) [gem]" level="application" />
@@ -122,8 +128,12 @@
     <orderEntry type="library" scope="PROVIDED" name="sqlite3 (v2.1.1, asdf: 3.3.4) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sshkit (v1.23.2, asdf: 3.3.4) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="stimulus-rails (v1.3.4, asdf: 3.3.4) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="stringio (v3.1.1, asdf: 3.3.4) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="tailwindcss-rails (v3.0.0, asdf: 3.3.4) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="tailwindcss-ruby (v3.4.14, asdf: 3.3.4) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="thor (v1.3.2, asdf: 3.3.4) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="thruster (v0.1.8, asdf: 3.3.4) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="timeout (v0.4.1, asdf: 3.3.4) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="turbo-rails (v2.0.11, asdf: 3.3.4) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="tzinfo (v2.0.6, asdf: 3.3.4) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="unicode-display_width (v2.6.0, asdf: 3.3.4) [gem]" level="application" />
@@ -152,6 +162,9 @@
         <option value="channel" />
         <option value="controller" />
         <option value="erb:authentication" />
+        <option value="erb:controller" />
+        <option value="erb:mailer" />
+        <option value="erb:scaffold" />
         <option value="generator" />
         <option value="helper" />
         <option value="integration_test" />
@@ -171,6 +184,7 @@
         <option value="solid_queue:install" />
         <option value="stimulus" />
         <option value="system_test" />
+        <option value="tailwindcss:authentication" />
         <option value="task" />
         <option value="test_unit:authentication" />
         <option value="test_unit:channel" />
@@ -190,6 +204,9 @@
         <option value="channel" />
         <option value="controller" />
         <option value="erb:authentication" />
+        <option value="erb:controller" />
+        <option value="erb:mailer" />
+        <option value="erb:scaffold" />
         <option value="generator" />
         <option value="helper" />
         <option value="integration_test" />
@@ -209,6 +226,7 @@
         <option value="solid_queue:install" />
         <option value="stimulus" />
         <option value="system_test" />
+        <option value="tailwindcss:authentication" />
         <option value="task" />
         <option value="test_unit:authentication" />
         <option value="test_unit:channel" />
