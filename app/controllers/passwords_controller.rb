@@ -10,7 +10,7 @@ class PasswordsController < ApplicationController
       PasswordsMailer.reset(user).deliver_later
     end
 
-    redirect_to new_session_url, notice: "Password reset instructions sent (if user with that email address exists)."
+    redirect_to new_session_url, notice: "Password reset instructions sent (if users with that email address exists)."
   end
 
   def edit
