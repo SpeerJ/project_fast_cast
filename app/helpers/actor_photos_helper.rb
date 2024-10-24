@@ -1,0 +1,2 @@
+module ActorPhotosHelper
+end

@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :actors, only: [:index, :show, :edit, :update] do
+    resources :actor_photos, only: [:index, :show, :new, :create, :destroy]
+  end
   resource :session
   resources :users, only: [ :new, :create, :show ]
   resources :passwords, param: :token
@@ -13,5 +16,5 @@ Rails.application.routes.draw do
   # get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
 
   # Defines the root path route ("/")
-  root "sessions#new"
+  root "actors#index"
 end
