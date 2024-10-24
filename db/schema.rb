@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2024_10_23_211644) do
+ActiveRecord::Schema[8.0].define(version: 2024_10_24_163916) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -52,6 +52,24 @@ ActiveRecord::Schema[8.0].define(version: 2024_10_23_211644) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "castings", force: :cascade do |t|
+    t.integer "user_type_id", null: false
+    t.string "name"
+    t.string "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "project_id"
+    t.index ["project_id"], name: "index_castings_on_project_id"
+  end
+
+  create_table "projects", force: :cascade do |t|
+    t.integer "user_type_id", null: false
+    t.string "name"
+    t.string "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "sessions", force: :cascade do |t|
     t.integer "user_id", null: false
     t.string "ip_address"
@@ -76,6 +94,7 @@ ActiveRecord::Schema[8.0].define(version: 2024_10_23_211644) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "name"
+    t.string "city"
     t.index ["email_address"], name: "index_users_on_email_address", unique: true
   end
 
