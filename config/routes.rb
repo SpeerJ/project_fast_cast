@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :actors, only: [:index, :show, :edit, :update] do
-    resources :actor_photos, only: [:index, :show, :new, :create, :destroy]
+    resources :photos, only: [:index, :show, :new, :create, :destroy]
   end
   resource :session
   resources :users, only: [ :new, :create, :show ]

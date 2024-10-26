@@ -28,6 +28,8 @@ gem "solid_cache"
 gem "solid_queue"
 gem "solid_cable"
 
+gem 'sqlite-vec', platform: :ruby_33
+
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
 
@@ -63,3 +65,7 @@ group :test do
 end
 
 gem "tailwindcss-rails", "~> 3.0"
+
+gem "neighbor", "~> 0.5.0"
+gem "ruby-openai", "~> 7.3"
+gem "faraday", "~> 2.12"
