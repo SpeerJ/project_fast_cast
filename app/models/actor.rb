@@ -4,4 +4,8 @@ class Actor < UserType
 
   delegate :about_me, :city, to: :actor_functionality
   delegate :name, :photos,  to: :user
+
+  def pfp
+    @pfp ||= photos.first&.image
+  end
 end
