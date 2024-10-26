@@ -1,17 +1,24 @@
-<div id="<%= dom_id actor %>">
-  <p class="my-5">
-    <strong class="block font-medium mb-1">About me:</strong>
-    <%= actor.about_me %>
-  </p>
+<div id="<%= dom_id actor %>" class="flex gap-4 items-start max-w-2x1 mx-auto p-4">
+  <% if actor.pfp.nil? %>
+  <div class="rounded-full w-96 h-56 bg-slate-300"></div>
+  <% else %>
+    <%= image_tag(actor.pfp, width: 400, class: 'rounded-full object-cover')%>
+<% end %>
 
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Name:</strong>
-    <%= actor.name %>
-  </p>
+  <div class="flex-1">
+    <p class="my-5">
+      <strong class="block font-medium mb-1">About me:</strong>
+      <%= actor.about_me %>
+    </p>
 
-  <p class="my-5">
-    <strong class="block font-medium mb-1">City:</strong>
-    <%= actor.city %>
-  </p>
+    <p class="my-5">
+      <strong class="block font-medium mb-1">Name:</strong>
+      <%= actor.name %>
+    </p>
 
+    <p class="my-5">
+      <strong class="block font-medium mb-1">City:</strong>
+      <%= actor.city %>
+    </p>
+  </div>
 </div>

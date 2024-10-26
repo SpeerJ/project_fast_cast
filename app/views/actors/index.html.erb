@@ -4,13 +4,27 @@
   <% end %>
 
   <% content_for :title, "Actors" %>
-
-  <div id="actors" class="min-w-full">
-    <% @actors.each do |actor| %>
-      <%= render actor %>
-      <p>
-        <%= link_to "Show this actor", actor, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-      </p>
-    <% end %>
+  <div class="flex justify-center">
+    <div class="max-w-4xl mx-auto">
+      <h1 class="justify-center">Find Actors</h1>
+      <%= form_with url: actors_path, method: :get, data: {turbo_frame: "actors"} do |f|%>
+        <%= f.text_field :query, value: params[:query] %>
+        <%= f.submit "Search" %>
+      <% end %>
+    </div>
   </div>
+
+  <%= turbo_frame_tag "actors" do %>
+    <div id="actors" class="min-w-full space-y-100 mt-8 ">
+      <% @actors.each do |actor| %>
+        <% next if actor.nil? %>
+        <div class="mt-8">
+          <%= render actor %>
+          <p>
+            <%= link_to "Show this actor", actor, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+          </p>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
 </div>

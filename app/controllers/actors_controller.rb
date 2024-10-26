@@ -3,7 +3,17 @@ class ActorsController < ApplicationController
 
   # GET /actors or /actors.json
   def index
-    @actors = Actor.all
+    # todo: simple keyword search weighted against semantic search
+    # Possible drop down when keywords don't return enough results
+    # force_sematics checkbox
+
+    return @actors = Actor.all unless params.has_key?(:query)
+
+    embedding = EmbeddingsFetcher.new.generate_embedding(search_params[:query])
+    @actors = Photo
+                .nearest_neighbors(:embedding, embedding, distance: 'cosine')
+                .limit(3)
+                .extract_associated(:actor)
   end
 
   # GET /actors/1 or /actors/1.json
@@ -13,7 +23,6 @@ class ActorsController < ApplicationController
   def destroy
 
   end
-
 
   # GET /actors/1/edit
   def edit
@@ -33,13 +42,18 @@ class ActorsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_actor
-      @actor = Actor.find(params.expect(:id))
-    end
 
-    # Only allow a list of trusted parameters through.
-    def actor_params
-      params.expect(actor: [ :about_me, :name, :city ])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_actor
+    @actor = Actor.find(params.expect(:id))
+  end
+
+  # Only allow a list of trusted parameters through.
+  def actor_params
+    params.expect(actor: [:about_me, :name, :city])
+  end
+
+  def search_params
+    params.permit(:query, :commit)
+  end
 end

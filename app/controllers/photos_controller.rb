@@ -22,12 +22,9 @@ class PhotosController < ApplicationController
   # POST /actor_photos or /actor_photos.json
   def create
     @actor = Actor.find(params[:actor_id])
-    summary = PhotoSummarizer.new(params['photo']).summarize
-    embeddings = EmbeddingsFetcher.new.generate_embedding(summary)
 
     respond_to do |format|
-      if photo = @actor.user.photos.create!(summary: summary, embedding: embeddings)
-        photo.image.attach(actor_photo_params)
+      if Photo.create_from_image!(params['photo'], user_id: @actor.user_id)
         format.html { redirect_to actor_photos_path, notice: "Actor photo was successfully created." }
         format.json { render :index, status: :created, location: actor }
       else

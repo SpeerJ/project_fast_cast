@@ -5,6 +5,7 @@ require 'json'
 class AnthropicClient
 
   def describe_photo(system_prompt, photo)
+
     response = faraday_client.post do |req|
       req.body = {
         model: "claude-3-5-sonnet-20241022",
@@ -17,7 +18,7 @@ class AnthropicClient
                                  source: {
                                    type: "base64",
                                    media_type: photo.content_type,
-                                   data: Base64.strict_encode64(photo.open.read)
+                                   data: Base64.strict_encode64(photo.open{ |x| x.read })
                                  }
                                }]}]
       }.to_json
