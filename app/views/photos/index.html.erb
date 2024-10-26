@@ -7,12 +7,12 @@
 
   <div class="flex justify-between items-center">
     <h1 class="font-bold text-4xl">Actor photos</h1>
-    <%= link_to "New actor photo", new_actor_actor_photo_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
+    <%= link_to "New actor photo", new_actor_photo_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
   </div>
 
   <div id="actor_photos" class="min-w-full">
     <% @actor_photos.each do |actor_photo| %>
-      <%= render 'actor_photo', actor_photo: actor_photo %>
+      <%= render 'photo', actor_photo: actor_photo %>
       <p>
         <%= link_to "Show this actor photo", actor_photo, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
       </p>

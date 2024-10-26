@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2024_10_24_163916) do
+ActiveRecord::Schema[8.0].define(version: 2024_10_25_185439) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -62,6 +62,10 @@ ActiveRecord::Schema[8.0].define(version: 2024_10_24_163916) do
     t.index ["project_id"], name: "index_castings_on_project_id"
   end
 
+# Could not dump table "photos" because of following StandardError
+#   Unknown type 'vector' for column 'embedding'
+
+
   create_table "projects", force: :cascade do |t|
     t.integer "user_type_id", null: false
     t.string "name"
@@ -100,6 +104,7 @@ ActiveRecord::Schema[8.0].define(version: 2024_10_24_163916) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "photos", "users"
   add_foreign_key "sessions", "users"
   add_foreign_key "user_types", "users"
 end

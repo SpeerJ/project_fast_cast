@@ -1,4 +1,4 @@
-class ActorPhotosController < ApplicationController
+class PhotosController < ApplicationController
   before_action :set_actor_photo, only: %i[ show edit update destroy ]
 
   # GET /actor_photos or /actor_photos.json
@@ -22,10 +22,13 @@ class ActorPhotosController < ApplicationController
   # POST /actor_photos or /actor_photos.json
   def create
     @actor = Actor.find(params[:actor_id])
+    summary = PhotoSummarizer.new(params['photo']).summarize
+    embeddings = EmbeddingsFetcher.new.generate_embedding(summary)
 
     respond_to do |format|
-      if @actor.photos.attach(actor_photo_params)
-        format.html { redirect_to actor_actor_photos_path, notice: "Actor photo was successfully created." }
+      if photo = @actor.user.photos.create!(summary: summary, embedding: embeddings)
+        photo.image.attach(actor_photo_params)
+        format.html { redirect_to actor_photos_path, notice: "Actor photo was successfully created." }
         format.json { render :index, status: :created, location: actor }
       else
         format.html { render :new, status: :unprocessable_entity }
