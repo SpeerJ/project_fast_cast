@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :projects
+  resources :castings
   resources :actors, only: [:index, :show, :edit, :update] do
     resources :photos, only: [:index, :show, :new, :create, :destroy]
   end

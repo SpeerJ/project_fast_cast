@@ -66,6 +66,8 @@ end
 
 gem "tailwindcss-rails", "~> 3.0"
 
+gem "simple_calendar"
+
 gem "neighbor", "~> 0.5.0"
 gem "ruby-openai", "~> 7.3"
 gem "faraday", "~> 2.12"

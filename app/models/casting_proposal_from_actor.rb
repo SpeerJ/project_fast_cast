@@ -1,0 +1,3 @@
+class CastingProposalFromActor < CastingProposal
+
+end
