@@ -1,9 +1,9 @@
 class HomesController < ApplicationController
-  before_action :set_home, only: %i[ show edit update destroy ]
+  allow_unauthenticated_access
 
   # GET /homes or /homes.json
   def index
     # Todo: only sample active profiles
-    @actors = Actor.all.sample(10)
+    @actors = Actor.all.sample(3)
   end
 end
