@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2024_10_25_185439) do
+ActiveRecord::Schema[8.0].define(version: 2024_10_29_210454) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -52,6 +52,25 @@ ActiveRecord::Schema[8.0].define(version: 2024_10_25_185439) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "busy_moments", force: :cascade do |t|
+    t.integer "user_type_id", null: false
+    t.date "start_time"
+    t.date "end_time"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_type_id"], name: "index_busy_moments_on_user_type_id"
+  end
+
+  create_table "casting_proposals", force: :cascade do |t|
+    t.integer "casting_director_id", null: false
+    t.integer "actor_id", null: false
+    t.string "type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["actor_id"], name: "index_casting_proposals_on_actor_id"
+    t.index ["casting_director_id"], name: "index_casting_proposals_on_casting_director_id"
+  end
+
   create_table "castings", force: :cascade do |t|
     t.integer "user_type_id", null: false
     t.string "name"
@@ -60,6 +79,30 @@ ActiveRecord::Schema[8.0].define(version: 2024_10_25_185439) do
     t.datetime "updated_at", null: false
     t.integer "project_id"
     t.index ["project_id"], name: "index_castings_on_project_id"
+  end
+
+  create_table "interview_requests", force: :cascade do |t|
+    t.integer "casting_director_id", null: false
+    t.integer "actor_id", null: false
+    t.boolean "sent_by_cd"
+    t.date "start_time"
+    t.date "end_time"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["actor_id"], name: "index_interview_requests_on_actor_id"
+    t.index ["casting_director_id"], name: "index_interview_requests_on_casting_director_id"
+  end
+
+  create_table "interviews", force: :cascade do |t|
+    t.integer "casting_director_id", null: false
+    t.integer "actor_id", null: false
+    t.boolean "sent_by_cd"
+    t.date "start_time"
+    t.date "end_time"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["actor_id"], name: "index_interviews_on_actor_id"
+    t.index ["casting_director_id"], name: "index_interviews_on_casting_director_id"
   end
 
 # Could not dump table "photos" because of following StandardError
@@ -104,6 +147,13 @@ ActiveRecord::Schema[8.0].define(version: 2024_10_25_185439) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "busy_moments", "user_types"
+  add_foreign_key "casting_proposals", "actors"
+  add_foreign_key "casting_proposals", "casting_directors"
+  add_foreign_key "interview_requests", "actors"
+  add_foreign_key "interview_requests", "casting_directors"
+  add_foreign_key "interviews", "actors"
+  add_foreign_key "interviews", "casting_directors"
   add_foreign_key "photos", "users"
   add_foreign_key "sessions", "users"
   add_foreign_key "user_types", "users"

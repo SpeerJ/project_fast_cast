@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :homes
   resources :projects
   resources :castings
   resources :actors, only: [:index, :show, :edit, :update] do
@@ -7,6 +8,7 @@ Rails.application.routes.draw do
   resource :session
   resources :users, only: [ :new, :create, :show ]
   resources :passwords, param: :token
+  resources :home, only: [:index]
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.

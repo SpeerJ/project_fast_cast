@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  casting_director: one
+  actor: one
+  sent_by_cd: false
+  start_time: 2024-10-29
+  end_time: 2024-10-29
+
+two:
+  casting_director: two
+  actor: two
+  sent_by_cd: false
+  start_time: 2024-10-29
+  end_time: 2024-10-29
